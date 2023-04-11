@@ -1,6 +1,7 @@
 package com.deg.productservice.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Invoice {
@@ -14,6 +15,17 @@ public class Invoice {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
+
+    @OneToMany(mappedBy = "invoice")
+    private List<InvoiceDetail> details;
+
+    public List<InvoiceDetail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<InvoiceDetail> details) {
+        this.details = details;
+    }
 
     public Invoice() {
     }

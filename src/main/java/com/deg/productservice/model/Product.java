@@ -1,6 +1,7 @@
 package com.deg.productservice.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -13,6 +14,17 @@ public class Product {
     private String code;
     private int stock;
     private double price;
+
+    @OneToMany(mappedBy = "product")
+    private List<InvoiceDetail> details;
+
+    public List<InvoiceDetail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<InvoiceDetail> details) {
+        this.details = details;
+    }
 
     public Product() {
     }
