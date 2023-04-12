@@ -15,12 +15,12 @@ public class InvoiceService {
     private InvoiceRepository invoiceRepository;
 
     // Obtener todas las facturas
-    public List<Invoice> getAllInvoices() {
+    public List<Invoice> findAll() {
         return invoiceRepository.findAll();
     }
 
     // Crear factura
-    public Invoice createInvoice(Invoice invoice) {
+    public Invoice create(Invoice invoice) {
         return invoiceRepository.save(invoice);
     }
 

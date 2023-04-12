@@ -16,17 +16,17 @@ public class ProductService {
     private ProductRepository productRepository;
 
     // Obtener todos los productos
-    public List<Product> getAllProducts() {
+    public List<Product> findAll() {
         return productRepository.findAll();
     }
 
     // Crear producto
-    public Product createProduct(Product product) {
+    public Product create(Product product) {
         return productRepository.save(product);
     }
 
     // Actualizar producto
-    public Product updateProduct(Long id, Product product) {
+    public Product update(Long id, Product product) {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Product not found with id: " + id));
 
@@ -38,7 +38,7 @@ public class ProductService {
     }
 
     // Eliminar producto
-    public void deleteProduct(Long id) {
+    public void delete(Long id) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Product not found with id: " + id));
 
@@ -46,7 +46,7 @@ public class ProductService {
     }
 
     // Buscar producto por código
-    public List<Product> searchProductsByCode(String productCode) {
+    public List<Product> searchByCode(String productCode) {
         return productRepository.findByCodeContaining(productCode);
     }
 

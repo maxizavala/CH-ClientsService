@@ -15,12 +15,12 @@ public class InvoiceDetailService {
     private InvoiceDetailRepository invoiceDetailRepository;
 
     // Crear nuevo detalle de factura
-    public InvoiceDetail createInvoiceDetail(InvoiceDetail invoiceDetail) {
+    public InvoiceDetail create(InvoiceDetail invoiceDetail) {
         return invoiceDetailRepository.save(invoiceDetail);
     }
 
     // Obtener los detalles de una factura
-    public List<InvoiceDetail> getInvoiceDetailsByInvoiceId(Long invoiceId) {
+    public List<InvoiceDetail> getInvoiceDetailsById(Long invoiceId) {
         return invoiceDetailRepository.findByInvoiceId(invoiceId);
     }
 }
