@@ -1,7 +1,6 @@
 package com.deg.productservice.controller;
 
 import com.deg.productservice.exception.ClientAlreadyExistsException;
-import com.deg.productservice.model.Client;
 import com.deg.productservice.model.InvoiceDetail;
 import com.deg.productservice.service.InvoiceDetailService;
 import org.springframework.beans.factory.annotation.Autowired;

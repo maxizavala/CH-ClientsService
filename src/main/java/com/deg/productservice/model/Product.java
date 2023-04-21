@@ -14,18 +14,7 @@ public class Product {
     private String code;
     private int stock;
     private double price;
-
-    @OneToMany(mappedBy = "product")
-    private List<InvoiceDetail> details;
-
-    public List<InvoiceDetail> getDetails() {
-        return details;
-    }
-
-    public void setDetails(List<InvoiceDetail> details) {
-        this.details = details;
-    }
-
+    
     public Product() {
     }
 
